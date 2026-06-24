@@ -1,0 +1,17 @@
+# models/sources/sources.yml
+
+version: 2
+
+sources:
+  - name: modelisation_sources
+    database: mon-projet-493209   # ← project ID seulement
+    schema: modelisation_sources              # ← le dataset BigQuery
+    tables:
+      - name: rooms
+      - name: hotels
+      - name: car_hires        
+      - name: car_rental_companies
+      - name: teams
+      - name: users
+      - name: organisations
+      - name: calendrier_months
