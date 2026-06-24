@@ -1,0 +1,85 @@
+
+version: 2
+
+models:
+    - name: fact_travel_hotel_booking
+      description: "merger of hotel tables"
+      columns:
+          - name: booking_reference
+            description: "reference of the room booking"
+            tests:
+                - unique
+                - not_null
+          - name: booked_at
+          - name: start_date
+            description: "the beginning of the reservation"
+          - name: end_date
+          - name: booking_status
+          - name: booking_price
+          - name: commission_percentage
+          - name: organisation_id
+          - name: organisation_name
+          - name: user_id
+          - name: hotel_id
+          - name: hotel_name
+          - name: hotel_room_id
+          - name: payment_done_at
+
+    - name: dim_corpo_employee
+      description: This table contains informations about employees
+      columns:
+          - name: user_id
+            description: "the beginning of the reservation"
+            tests:
+                - unique
+                - not_null
+          - name: first_name
+          - name: last_name
+          - name: phone_number
+          - name: organisation_id
+          - name: organisation_name
+          - name: pricing_plan
+          - name: subscribed_at     
+
+    - name: fact_corpo_subscription_income
+      description: This table contains informations income subscription
+      columns:
+          - name: month
+          - name: organisation_id
+          - name: organisation_name
+          - name: income
+          - name: pricing_plan  
+
+    - name: fact_income_monthly
+      description: This table contains income per month and per type
+      columns:
+          - name: month
+          - name: product_type
+          - name: income
+
+    - name: fact_travel_income
+      description: This table contains income
+      columns:
+          - name: day
+          - name: product_type
+          - name: income
+          - name: organisation_id
+          - name: organisation_name        
+
+    - name: fact_travel_car_booking
+      description: This table contains car bookings
+      columns:
+          - name: booking_reference
+          - name: booked_at
+          - name: start_date
+          - name: end_date
+          - name: booking_status
+          - name: booking_price
+          - name: commission_percentage
+          - name: organisation_id
+          - name: organisation_name
+          - name: user_id
+          - name: car_rental_company_id
+          - name: car_rental_company_name
+          - name: car_model_name
+          - name: payment_done_at
