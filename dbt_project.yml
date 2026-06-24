@@ -41,8 +41,6 @@ models:
       relation: true      # description de la table
       columns: true       # description des colonnes
     # Applies to all files under models/example/
-    example:
-      +materialized: table
 
     modelisation_travel:
       +materialized: table
